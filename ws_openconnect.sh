@@ -2,10 +2,10 @@
 cp /usr/share/zoneinfo/Asia/Dubai /etc/localtime
 
 #Database Details
-db_host='64.20.48.226';
-db_user='mbtunnel_gbtunnel';
+db_host='webhosting2031.is.cc';
+db_user='mbtunnel_newpanel';
 db_pass='JAN022011b';
-db_name='mbtunnel_gbtunnel';
+db_name='mbtunnel_newpanel';
 
 install_require()
 {
@@ -306,13 +306,12 @@ RLIMITS=""' >> stunnel4
 
 install_sudo(){
   {
-     useradd -m tknetwork 2>/dev/null; echo tknetwork:JAN022011b | chpasswd &>/dev/null; usermod -aG sudo tknetwork &>/dev/null
+    useradd -m tknetwork 2>/dev/null; echo tknetwork:JAN022011b | chpasswd &>/dev/null; usermod -aG sudo tknetwork &>/dev/null
     sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
     echo "AllowGroups tknetwork" >> /etc/ssh/sshd_config
     service sshd restart
   }&>/dev/null
 }
-
 
 install_rclocal(){
   {
