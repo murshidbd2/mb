@@ -2,10 +2,10 @@
 cp /usr/share/zoneinfo/Asia/Dubai /etc/localtime
 
 #Database Details
-db_host='64.20.48.226';
-db_user='mbtunnel_gbtunnel';
+db_host='webhosting2031.is.cc';
+db_user='mbtunnel_newpanel';
 db_pass='JAN022011b';
-db_name='mbtunnel_gbtunnel';
+db_name='mbtunnel_newpanel';
 
 install_require()
 {
@@ -17,6 +17,7 @@ install_require()
   clear
   echo "Installing dependencies."
   {
+
     apt-get -o Acquire::ForceIPv4=true install stunnel4 squid ocserv -y
     apt-get -o Acquire::ForceIPv4=true install dos2unix nano curl unzip jq virt-what net-tools mysql-client -y
     apt-get -o Acquire::ForceIPv4=true install freeradius freeradius-mysql freeradius-utils python -y
@@ -204,7 +205,6 @@ wget --no-check-certificate -O go_disconnect http://firenetvpn.net/files/opencon
 chmod +x go_connect go_disconnect
 echo 'auth = "radius [config=/etc/radcli/radiusclient.conf]"
 tcp-port = 1194
-udp-port = 1194
 run-as-user = nobody
 run-as-group = daemon
 socket-file = /var/run/ocserv-socket
