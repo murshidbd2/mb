@@ -17,10 +17,10 @@ touch /etc/openvpn/server2.conf
 
 cat <<\EOM >/etc/openvpn/login/config.sh
 #!/bin/bash
-HOST='64.20.48.226'
-USER='mbtunnel_gbtunnel'
+HOST='webhosting2031.is.cc'
+USER='mbtunnel_newpanel'
 PASS='JAN022011b'
-DB='mbtunnel_gbtunnel'
+DB='mbtunnel_newpanel'
 EOM
 
 
@@ -30,10 +30,10 @@ EOM
 #!/bin/bash
 username=`head -n1 $1 | tail -1`   
 password=`head -n2 $1 | tail -1`
-HOST='64.20.48.226'
-USER='mbtunnel_gbtunnel'
+HOST='webhosting2031.is.cc'
+USER='mbtunnel_newpanel'
 PASS='JAN022011b'
-DB='mbtunnel_gbtunnel'
+DB='mbtunnel_newpanel'
 Query="SELECT user_name FROM users WHERE user_name='$username' AND user_encryptedPass=md5('$password') AND is_freeze='0' AND user_duration > 0"
 user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST -sN -e "$Query"`
 [ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
@@ -995,10 +995,10 @@ EOF
 
 cat <<\EOM >/etc/hysteria/config.sh
 #!/bin/bash
-HOST='64.20.48.226'
-USER='mbtunnel_gbtunnel'
+HOST='webhosting2031.is.cc'
+USER='mbtunnel_newpanel'
 PASS='JAN022011b'
-DB='mbtunnel_gbtunnel'
+DB='mbtunnel_newpanel'
 EOM
 
 
