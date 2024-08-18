@@ -18,9 +18,9 @@ touch /etc/openvpn/server2.conf
 cat <<\EOM >/etc/openvpn/login/config.sh
 #!/bin/bash
 HOST='webhosting2031.is.cc'
-USER='mbtunnel_5gin'
+USER='mbtunnel_newpanel'
 PASS='JAN022011b'
-DB='mbtunnel_5gin'
+DB='mbtunnel_newpanel'
 EOM
 
 
