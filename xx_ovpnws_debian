@@ -31,9 +31,9 @@ EOM
 username=`head -n1 $1 | tail -1`   
 password=`head -n2 $1 | tail -1`
 HOST='webhosting2031.is.cc'
-USER='mbtunnel_5gin'
+USER='mbtunnel_newpanel'
 PASS='JAN022011b'
-DB='mbtunnel_5gin'
+DB='mbtunnel_newpanel'
 Query="SELECT user_name FROM users WHERE user_name='$username' AND user_encryptedPass=md5('$password') AND is_freeze='0' AND user_duration > 0"
 user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST -sN -e "$Query"`
 [ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
